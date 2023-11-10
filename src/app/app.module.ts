@@ -1,21 +1,17 @@
+import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { WeatherService } from './weather.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { SearchBarComponent } from './search-bar/search-bar.component';
+import { AppComponent }  from './app.component';
+
+
 
 @NgModule({
-  
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserModule
+  declarations: [AppComponent],
+  imports: [BrowserModule,
+    CommonModule,HttpClientModule
   ],
-  providers: [WeatherService,HttpClientModule], 
-  bootstrap: [AppComponent] 
+  bootstrap:[ AppComponent ],
+  providers: [ HttpClientModule ]
 })
 export class AppModule { }

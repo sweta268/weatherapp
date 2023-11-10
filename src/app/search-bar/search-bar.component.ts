@@ -11,7 +11,10 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule,FormsModule],
   templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.sass'
+  styleUrl: './search-bar.component.sass',
+  providers: [
+    WeatherService
+]
 })
 export class SearchBarComponent {
   cityName: string = '';
@@ -22,10 +25,10 @@ export class SearchBarComponent {
   searchCity() {
     if (this.cityName) {
       console.log(this.cityName);
-       this.weatherService.getWeather(this.cityName).subscribe(data => {
-         this.WeatherData = data;
-       // this.router.navigate(['/forecast', this.cityName]);
-     });
+    //    this.weatherService.getWeather(this.cityName).subscribe(data => {
+    //      this.WeatherData = data;
+    //    // this.router.navigate(['/forecast', this.cityName]);
+    //  });
   }
   }
 }
